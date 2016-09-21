@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pokémon Go Map</title>
+	<title>Pingomapgo</title>
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	<link rel="icon" type="image/png" href="static/favicon.ico">
@@ -45,10 +45,10 @@ body {
     cursor: pointer;
     opacity: 0;
     /* hide this */
-    
+
     z-index: 2;
     /* and place it over the hamburger */
-    
+
     -webkit-touch-callout: none;
 }
 /*
@@ -122,7 +122,7 @@ body {
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
-    
+
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     -webkit-transform-origin: 0% 0%;
@@ -202,62 +202,64 @@ span.select2 {
 				<p style="margin: 8px 0">
 					{% if is_authenticated %}
 					<span class="auth-status label label-success">Authenticated</span> {% else %}
-					<span class="auth-status label label-warning"><a href="login" style="color: white; text-decoration: inherit;">Not authenticated</a></span> {% endif %}
-					<span class="last-request label label-warning">No scans yet</span>
+					<span class="auth-status label label-warning">Bem vindo!</span> {% endif %}
+					<span class="last-request label label-warning">Não está procurando!</span>
 				</p>
 				<p style="margin: 8px 0">
-					<span class="full-scan label label-grey">No full scan yet</span>
-					<span class="current-scan-percent label label-grey">Current Scan: 0.00%</span>
+					{% if is_authenticated %}
+					<span class="full-scan label label-grey">Nenhuma verificação completa ainda</span>
+					<span class="current-scan-percent label label-grey">Verificações: 0.00%</span>
 					<span class="num-threads label label-grey">0 Threads</span>
-					<span class="num-accounts label label-grey">0 Accounts</span>
+					<span class="num-accounts label label-grey">0 Contas</span>
+					{% endif %}
 				</p>
 
 				<fieldset style="border: 0; padding-left: 0;">
 					<div class="chckbox">
 						<input type="checkbox" id="pokemon-checkbox">
-						<label for="pokemon-checkbox">Display Pokemon</label>
+						<label for="pokemon-checkbox">Mostrar Pokemon</label>
 						<br>
 					</div>
-					<!--
-                        <div class="chckbox">
+
+                        <!-- <div class="chckbox">
                             <input type="checkbox" id="pokestops-checkbox">
-                            <label for="pokestops-checkbox">Display all Pokestops</label><br>
+                            <label for="pokestops-checkbox">Mostrar Pokestops</label><br>
                         </div>
 
                         <div class="chckbox">
                             <input type="checkbox" id="pokestops-lured-checkbox">
-                            <label for="pokestops-lured-checkbox">Display lured Pokestops</label><br>
-                        </div>
-                        -->
+                            <label for="pokestops-lured-checkbox">Mostrar lured Pokestops</label><br>
+                        </div> -->
+
 					<div class="chckbox">
 						<input type="checkbox" id="gyms-checkbox">
-						<label for="gyms-checkbox">Display Gyms</label>
+						<label for="gyms-checkbox">Mostrar Gynásios</label>
 						<br>
 					</div>
 
 					<div class="chckbox">
 						<input type="checkbox" id="coverage-checkbox">
-						<label for="coverage-checkbox">Show Map Coverage</label>
+						<label for="coverage-checkbox">Mostrar cobertura do mapa</label>
 						<br>
 					</div>
 				</fieldset>
 
 				<p>
 					<label for="exclude-pokemon">
-						Hide common Pokemon:
+						Esconder Pokemon:
 						<select id="exclude-pokemon" multiple="multiple"></select>
 					</label>
 				</p>
 				<p>
 					<label for="heat-map-mons">
-						Show a heatmap of pokemons:
+						Mostrar um mapa de calor dos pokemons:
 						<select id="heat-map-mons" multiple="multiple"></select>
 					</label>
 				</p>
 				<p>
-					<a href="config">Server Configuration</a>
-					<br />
-					<a href="stats">View Stats and Notifications</a>
+					<!-- <a href="config">Server Configuration</a>
+					<br />-->
+					<a href="stats">Estatísticas e notificações</a>
 				</p>
 
 			</div>

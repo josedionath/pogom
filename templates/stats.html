@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pokémon Go Map - Statistics</title>
+    <title>Pingomapgo - Estatísticas</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="container col-md-6 col-md-offset-3 margin-top-15">
-    <a href="../" class="btn btn-default">Back to Map</a>
+    <a href="../" class="btn btn-default">Voltar para o Mapa</a>
     <h1>Pokestats</h1>
     <div class="form-group notify-selector col-sm-4">
       <select class="form-control" id="sel1">
@@ -66,7 +66,7 @@
                     </td>
                     <td><strong>{{pokemon.pokemon_name}}</strong></td>
                     <td class="col-sm-1">
-                        {% if pokemon.lastseen is not none %}   
+                        {% if pokemon.lastseen is not none %}
                             {{ pokemon.lastseen.strftime('%d %b, %H:%M') }}
                         {% else %}
                             never
